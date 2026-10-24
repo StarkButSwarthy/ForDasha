@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#21151f">
+<title>Для моєї киці ❤️</title>
+<style>
+  :root {
+    --ink: #fff7fb;
+    --muted: #e8cbd9;
+    --pink: #f6b9d0;
+    --rose: #c86c91;
+    --deep: #21151f;
+    --glass: rgba(255, 242, 248, .075);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; min-height: 100vh; color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+      radial-gradient(ellipse at 15% 15%, rgba(173, 82, 125, .23), transparent 40%),
+      radial-gradient(ellipse at 85% 80%, rgba(110, 70, 130, .22), transparent 38%),
+      linear-gradient(135deg, #17121b, #30202e 55%, #1e1727);
+    overflow-x: hidden;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .22;
+    background-image: radial-gradient(#fff 0.7px, transparent .7px);
+    background-size: 37px 37px;
+    mask-image: linear-gradient(to bottom, black, transparent 90%);
+  }
+  .screen {
+    min-height: 100svh; display: grid; place-items: center;
+    padding: 28px 18px; position: relative;
+  }
+  .intro { text-align: center; width: min(680px, 100%); }
+  .eyebrow {
+    color: var(--pink); text-transform: uppercase; letter-spacing: .24em;
+    font: 11px/1.7 Arial, sans-serif; margin-bottom: 22px;
+  }
+  .heart {
+    font-size: 35px; display: inline-block; color: #ffb4ce;
+    filter: drop-shadow(0 0 18px rgba(255, 139, 184, .55));
+    animation: heartbeat 2s ease-in-out infinite;
+  }
+  h1 {
+    font-size: clamp(38px, 8vw, 76px); font-weight: 400; line-height: 1.05;
+    margin: 18px 0; letter-spacing: -.035em;
+  }
+  .intro p {
+    color: var(--muted); font-size: clamp(17px, 3vw, 21px);
+    line-height: 1.75; margin: 0 auto 32px; max-width: 490px;
+  }
+  .enter {
+    appearance: none; border: 1px solid rgba(255, 214, 230, .62);
+    background: linear-gradient(135deg, #f2b5cc, #d887a8);
+    color: #321b2a; border-radius: 999px; padding: 15px 29px;
+    font: 600 14px Arial, sans-serif; letter-spacing: .04em; cursor: pointer;
+    box-shadow: 0 10px 35px rgba(211, 111, 153, .2);
+    transition: transform .2s, box-shadow .2s, filter .2s;
+  }
+  .enter:hover { transform: translateY(-2px); box-shadow: 0 14px 42px rgba(211,111,153,.35); filter: brightness(1.04); }
+  .enter:focus-visible { outline: 2px solid white; outline-offset: 5px; }
+  .hint { font: 11px Arial, sans-serif; color: #c9aab9; margin-top: 19px; letter-spacing: .06em; }
+  .letter-screen { display: none; padding-top: 55px; padding-bottom: 70px; }
+  .letter-screen.show { display: block; animation: appear .9s ease both; }
+  .letter-wrap { width: min(760px, 100%); margin: 0 auto; }
+  .back {
+    border: 0; color: #e7bdcf; background: transparent; cursor: pointer;
+    font: 12px Arial, sans-serif; letter-spacing: .06em; padding: 10px 0 20px;
+  }
+  .letter {
+    position: relative; border: 1px solid rgba(255, 214, 230, .22);
+    background: linear-gradient(145deg, rgba(255,245,250,.09), rgba(255,245,250,.035));
+    border-radius: 24px; padding: clamp(24px, 6vw, 54px);
+    box-shadow: 0 25px 90px rgba(0,0,0,.24); backdrop-filter: blur(12px);
+  }
+  .letter::before {
+    content: "✦"; position: absolute; right: 25px; top: 17px;
+    color: rgba(255, 190, 214, .62); font-size: 18px;
+  }
+  .letter h2 {
+    text-align: center; font-size: clamp(31px, 6vw, 47px); font-weight: 400;
+    margin: 0 0 10px; color: #ffe5ef;
+  }
+  .subtitle { text-align: center; color: #d9a9bf; font: 10px Arial,sans-serif; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 34px; }
+  .letter p { color: #f7e9f0; font-size: clamp(17px, 2.5vw, 19px); line-height: 1.95; margin: 0 0 21px; }
+  .letter p:first-of-type::first-letter { color: #ffbfd5; font-size: 1.45em; }
+  .signature { text-align: right; color: #ffc3d9; font-style: italic; font-size: 25px; margin-top: 35px; }
+  .footer-heart { text-align: center; font-size: 22px; margin-top: 28px; letter-spacing: .4em; color: #f4a9c5; }
+  .floating { position: fixed; pointer-events: none; z-index: 0; color: rgba(255,190,215,.35); animation: floatUp linear infinite; }
+  .screen > * { position: relative; z-index: 1; }
+  @keyframes heartbeat { 0%,100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+  @keyframes appear { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes floatUp { from { transform: translateY(110vh) rotate(0deg); } to { transform: translateY(-15vh) rotate(25deg); } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<div id="decor" aria-hidden="true"></div>
+
+<main>
+  <section class="screen" id="welcome">
+    <div class="intro">
+      <div class="eyebrow">маленький всесвіт, створений для тебе</div>
+      <div class="heart" aria-hidden="true">♥</div>
+      <h1>Для моєї киці</h1>
+      <p>Є дещо, що я хочу тобі сказати.<br>Відкрий, коли матимеш хвилинку для нас. ❤️</p>
+      <button class="enter" id="enterBtn">Відкрити моє серденько <span aria-hidden="true">↗</span></button>
+      <div class="hint">тільки для тебе · з усією моєю любов’ю</div>
+    </div>
+  </section>
+
+  <section class="screen letter-screen" id="letterScreen" aria-hidden="true">
+    <div class="letter-wrap">
+      <button class="back" id="backBtn">← Повернутися</button>
+      <article class="letter">
+        <h2>Моя маленька</h2>
+        <div class="subtitle">слова, які живуть у моєму серці</div>
+
+        <p>З самого початку наших стосунків ти була для мене секретом, який дуже хотілося розгадати. З кожним днем, коли ми ставали ближче, я дізнавався все більше про тебе, і мені ніколи не переставало бути цікаво.</p>
+
+        <p>Тим не менш, у мене ніколи не було відчуття, що коли я розгадаю тебе до кінця, то мої почуття зникнуть. Ти — наче заборонений плід, до якого я зміг дістатися й пізнати. Плід, який із кожним днем, із кожним секретом, що я дізнаюся, стає все більш притягуючим і ще цікавішим.</p>
+
+        <p>Ти та, про кого я навіть мріяти не міг. Ти людина, з якою мені легко і з якою я можу бути собою в будь-який момент. Звісно, у нас були труднощі, але я вірю, що ми прорвемося крізь них і будемо кохати одне одного так, як ніколи раніше.</p>
+
+        <p>Я мало говорю тобі щось подібне, але, сонечко, ти — моє все. Я неймовірно сильно кохаю тебе: за твій характер, за твою поведінку, за кожну дрібничку, яка є в тобі.</p>
+
+        <p>Не можу навіть уявити свого життя без твоєї посмішки й твоїх милих очей, у яких я тону щоразу, коли дивлюся в них. Я так радий їх бачити, але, на жаль, відстань іноді диктує свої правила… А твій сміх і твої обійми приносять мені більше радості, ніж будь-що інше у світі.</p>
+
+        <p>Звісно, цей текст навіть не може передати всього, що я відчуваю до тебе. Але знай: я безмежно тебе кохаю. Ти для мене — як ковток повітря, як найменша й водночас найбільша складова Всесвіту, без якої неможливо існувати. Як Великий вибух, завдяки якому я можу бачити цей світ і насолоджуватися всім, що мене оточує.</p>
+
+        <div class="signature">Кохаю тебе, моя маленька <span aria-hidden="true">♥</span></div>
+        <div class="footer-heart" aria-hidden="true">♡ · ♡ · ♡</div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<script>
+  const welcome = document.getElementById('welcome');
+  const letterScreen = document.getElementById('letterScreen');
+  document.getElementById('enterBtn').addEventListener('click', () => {
+    welcome.style.display = 'none';
+    letterScreen.classList.add('show');
+    letterScreen.setAttribute('aria-hidden', 'false');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  document.getElementById('backBtn').addEventListener('click', () => {
+    letterScreen.classList.remove('show');
+    letterScreen.setAttribute('aria-hidden', 'true');
+    letterScreen.style.display = 'none';
+    welcome.style.display = 'grid';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  const decor = document.getElementById('decor');
+  const symbols = ['♡', '✦', '♥', '✧'];
+  for (let i = 0; i < 15; i++) {
+    const el = document.createElement('span');
+    el.className = 'floating';
+    el.textContent = symbols[i % symbols.length];
+    el.style.left = (Math.random() * 100) + '%';
+    el.style.fontSize = (10 + Math.random() * 17) + 'px';
+    el.style.animationDuration = (17 + Math.random() * 18) + 's';
+    el.style.animationDelay = (-Math.random() * 28) + 's';
+    decor.appendChild(el);
+  }
+</script>
+</body>
+</html>
